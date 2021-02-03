@@ -29,17 +29,10 @@ Edit the `.env` file to change the default IP address, MySQL root password and W
 
 ## Installation
 
-Install the app on your local machine
-
-- [Node.js](https://nodejs.org/)
-
 Open a terminal and `cd` to the folder in which `docker-compose.yml` is saved and run:
 
 ```bash
 docker-compose up
-
-# npm
-npm start
 ```
 
 This creates two new folders next to your `docker-compose.yml` file.
@@ -59,18 +52,12 @@ You can start the containers with the `up` command in daemon mode (by adding `-d
 
 ```bash
 docker-compose start
-
-# npm
-npm start
 ```
 
 ### Stopping containers
 
 ```bash
 docker-compose stop
-
-# npm
-npm run stop
 ```
 
 ### Removing containers
@@ -79,21 +66,13 @@ To stop and remove all the containers use the`down` command:
 
 ```bash
 docker-compose down
-
-# npm
-npm run down
 ```
 
 Use `-v` if you need to remove the database volume which is used to persist the database:
 
 ```bash
 docker-compose down -v
-
-# npm
-npm run down:db
 ```
-
-For other commands, see npm scripts in [package.json](./package.json)
 
 ### Project from existing source
 
@@ -106,9 +85,6 @@ You can now use the `up` command:
 
 ```bash
 docker-compose up
-
-# npm
-npm run up
 ```
 
 This will create the containers and populate the database with the given dump. You may set your host entry and change it in the database, or you simply overwrite it in `wp-config.php` by adding:
@@ -156,9 +132,6 @@ Or to list installed plugins:
 
 ```bash
 docker-compose run --rm wpcli plugin list
-
-# npm
-npm run wp plugin list
 ```
 
 For an easier usage you may consider adding an alias for the CLI:
