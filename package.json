@@ -4,7 +4,8 @@
   "description": "Easy WordPress development with Docker and Docker Compose.",
   "scripts": {
     "start": "docker-compose up -d --build",
-    "dev": "docker-compose --env-file ./.env.dev up -d --build",
+    "copy:env": "cp ./.env.dev ./.env -f",
+    "dev": "npm run copy:env && docker-compose up -d --build",
     "fix:owner": "sudo chown -hR $(id -u):$(id -g) .",
     "up": "docker-compose up",
     "stop": "docker-compose stop",
