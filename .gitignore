@@ -1,6 +1,18 @@
+# Not required. Because it exists for npm scripts
+package-lock.json
+
+# Mount directories
 wp-app/
 wp-data/
-
 # wp-themes/
 # wp-plugins/
 # wp-uploads/
+
+# IDE
+.vscode/
+
+# Mac systemfile
+.DS_Store
+
+# production env
+.env
