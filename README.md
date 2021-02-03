@@ -1,5 +1,54 @@
 # WPDC - WordPress Docker Compose
 
+Forked from [nezhar/wordpress-docker-compose](https://github.com/nezhar/wordpress-docker-compose)
+
+Difference: I just made it possible to start frequently used commands of docker-compose with npm scripts
+
+## Instration
+
+Install the app on your local machine
+
+-- [Node.js](https://nodejs.org/)
+
+## Command List
+
+```bash
+# docker-compose up & build. *Use .env.dev
+npm run dev
+
+# Fix permissions for Linux users
+npm run fix:owner
+
+# docker-compose up
+npm run up
+
+# docker-compose stop
+npm run stop
+
+# docker-compose rm
+npm run rm
+
+# docker-compose down
+npm run down
+
+# docker-compose down -v
+npm run down:db
+
+# docker-compose down --rmi all
+npm run down:all
+
+# docker-compose down --rmi all --volumes --remove-orphans
+npm run remove
+
+# remove mount directories - sudo rm -rf wp-app/ wp-data/
+npm run remove:mount
+
+# use WP-CLI - docker-compose run --rm wpcli
+npm run wpcli
+```
+
+---
+
 Easy WordPress development with Docker and Docker Compose.
 
 With this project you can quickly run the following:
