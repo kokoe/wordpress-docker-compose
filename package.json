@@ -2,9 +2,10 @@
   "name": "docker-docker-wordpress",
   "version": "1.0.0",
   "description": "Easy WordPress development with Docker and Docker Compose.",
-  "main": "index.js",
   "scripts": {
-    "start": "docker-compose up -d",
+    "start": "docker-compose up -d --build",
+    "dev": "docker-compose --env-file ./.env.dev up -d --build",
+    "fix:owner": "sudo chown -hR $(id -u):$(id -g) .",
     "up": "docker-compose up",
     "stop": "docker-compose stop",
     "rm": "docker-compose rm",
@@ -12,8 +13,9 @@
     "down:db": "docker-compose down -v",
     "down:all": "docker-compose down --rmi all",
     "remove": "docker-compose down --rmi all --volumes --remove-orphans",
+    "remove:mount": "sudo rm -rf wp-app/ wp-data/",
     "wp": "docker-compose run --rm wpcli"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "@kokoe",
+  "license": "MIT"
 }
