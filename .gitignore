@@ -4,12 +4,12 @@ package-lock.json
 # Mount directories
 wp-app/
 wp-data/
-# wp-themes/
-# wp-plugins/
-# wp-uploads/
+wp-themes
+wp-plugins
 
 # IDE
 .vscode/
+*.code-workspace
 
 # Mac systemfile
 .DS_Store
