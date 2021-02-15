@@ -10,14 +10,39 @@ Install the app on your local machine
 
 -- [Node.js](https://nodejs.org/)
 
+Open a terminal and `cd` to the folder in which `docker-compose.yml` is saved and run:
+
+```bash
+# Setup
+npm run init
+
+# Fix permissions for Linux users
+npm run fix:permission
+```
+
+This creates two new symbolic link next to your `docker-compose.yml` file.
+
+- `wp-plugins` – link to `/wp-content/plugins/`
+- `wp-themes` – link to `/wp-content/themes/`
+
+From the second time onward, start with the following command
+
+```bash
+# start development (docker-compose up -d)
+npm start
+```
+
 ## Command List
 
 ```bash
-# docker-compose up & build. *Use .env.dev
-npm run dev
+# Setup
+npm run init
 
 # Fix permissions for Linux users
-npm run fix:owner
+npm run fix:permission
+
+# start development (docker-compose up -d)
+npm start
 
 # docker-compose up
 npm run up
@@ -32,16 +57,13 @@ npm run rm
 npm run down
 
 # docker-compose down -v
-npm run down:db
+npm run down:volumes
 
 # docker-compose down --rmi all
 npm run down:all
 
-# docker-compose down --rmi all --volumes --remove-orphans
+# docker-compose down --rmi all --volumes --remove-orphans & remove mount directories
 npm run remove
-
-# remove mount directories - sudo rm -rf wp-app/ wp-data/
-npm run remove:mount
 
 # use WP-CLI - docker-compose run --rm wpcli
 npm run wpcli
